@@ -3,6 +3,8 @@ package org.symbaroum.api.admin.services;
 import org.springframework.stereotype.Service;
 import org.symbaroum.api.admin.model.abilities.Trait;
 import org.symbaroum.api.admin.repository.TraitRepository;
+import org.symbaroum.api.exceptions.SymbaroumApiException;
+import org.symbaroum.api.exceptions.SymbaroumApiExceptionType;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -25,7 +27,9 @@ public class TraitService {
         return result;
     }
 
-    public Optional<Trait> getTraitById(Long id) {
-        return repository.findById(id);
+    public Trait getTraitById(Long id) {
+        return repository
+                .findById(id)
+                .orElseThrow(() -> new SymbaroumApiException(SymbaroumApiExceptionType.NOT_FOUND));
     }
 }
