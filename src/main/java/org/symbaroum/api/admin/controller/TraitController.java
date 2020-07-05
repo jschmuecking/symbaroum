@@ -18,7 +18,7 @@ public class TraitController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Trait> getTrait(@PathVariable Long id) {
+    public Trait getTrait(@PathVariable Long id) {
         return service.getTraitById(id);
     }
 
