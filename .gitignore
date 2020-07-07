@@ -29,6 +29,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### DB ###
-neo4j

@@ -13,3 +13,5 @@ services:
       - ./neo4j/plugins:/plugins
     environment:
       NEO4J_AUTH: neo4j/admin
+      NEO4JLABS_PLUGINS: '["apoc"]'
+      NEO4J_apoc_export_file_enabled: 'true'
